@@ -11,6 +11,9 @@ for i = 1:height(files) %convert from structure to cell array of folder names
 end
 FolderList = unique(FolderList); %remove duplicates
 
+% Remove excluded runs
+% omitted code due to subject identifiers
+
 %% Calculate stimulation and response metrics for each run
 structheight = 100000;
 DataTable = struct('SubjectID', cell(structheight,1), 'StimSite', cell(structheight,1),...

@@ -18,7 +18,7 @@ else
     Orig_StimSite = StimSite;
 end
 CurrentIntensity = str2double(replace(Folderinfo{end}, {'_retest', 'mA'}, ''));
-if matches(SubjectID, {'S1242','S19145'})
+if matches(SubjectID, {'',''})% omitted code due to subject identifiers
     PulseWidth = 200;
 else
     PulseWidth = 300;
@@ -26,34 +26,11 @@ end
 
 %% determine stim site network percentages
 % load network info
-if strcmp(SubjectID, 'DQTAWH')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/DQTAWH/REST_test_41k/2mm/vonmises_parcellations/17';
-elseif strcmp(SubjectID, 'SSYQZJ')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/SSYQZJ/REST_41k_test/2mm/vonmises_parcellations/14';
-elseif strcmp(SubjectID, 'PHPKQJ')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/PHPKQJ/REST/2mm/vonmises_parcellations/18';
-elseif strcmp(SubjectID, 'YKBYHS')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/YKBYHS/REST_41k_best/2mm/vonmises_parcellations/20';
-elseif strcmp(SubjectID, 'XVFXFI')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/XVFXFI/REST/2mm/vonmises_parcellations/14';    
-elseif strcmp(SubjectID, 'CEWLLT')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/CEWLLT/REST/2mm/vonmises_parcellations/14';   
-elseif strcmp(SubjectID, 'TTHMMI')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/TTHMMI/REST/2mm/vonmises_parcellations/13';   
-elseif strcmp(SubjectID, 'XBSGST')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/XBSGST/REST_41k/2mm/vonmises_parcellations/17';   
-elseif strcmp(SubjectID, 'ZWLWDL')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/ZWLWDL/REST/2mm/vonmises_parcellations/17';   
-end
+% omitted code due to subject identifiers
 
 %load ranked network memberships for each electrode
-if strcmp(SubjectID,'SSYQZJ')
-    Stim_Networks = readtable(sprintf('%s/Bipolar_gauss_10mm_FWHM_Elec_Network_Membership_Surgery2.csv',...
-    vonmises_path));
-else
-    Stim_Networks = readtable(sprintf('%s/Bipolar_gauss_10mm_FWHM_Elec_Network_Membership.csv',...
-    vonmises_path));
-end
+% omitted code due to subject identifiers
+
 stim_channels = split(StimSite,'-');
 MirroredStimSite = [stim_channels{2} '-' stim_channels{1}];
 stim_index = matches(Stim_Networks.ChannelID, StimSite) |...

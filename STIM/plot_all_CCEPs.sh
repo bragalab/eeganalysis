@@ -27,7 +27,7 @@ echo "Checking for processed iEEG Stimulation runs"
 OLDIFS=$IFS
 
 #search for preprocessed stim data
-directories=$(ls -d  /projects/b1134/processed/ieeg_stim/*/OAUOBH/*/*/*/*/*z_flip.mat 2> /dev/null)
+directories=$(ls -d  /projects/b1134/processed/ieeg_stim/*/*/*/*/*/*/*z_flip.mat 2> /dev/null)
 directory_list=(${directories// / })
 if (( $SLURM_ARRAY_TASK_ID > ${#directory_list[@]} )); then
     echo "This array ID is unused because it exceeds the number of EEG directories."

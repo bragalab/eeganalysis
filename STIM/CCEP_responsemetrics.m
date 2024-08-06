@@ -33,43 +33,10 @@ channel_IDs(bad_indices,:) = [];
 stim_data(bad_indices,:) = [];
 
 %% load network info
-if strcmp(SubjectID, 'DQTAWH')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/DQTAWH/REST_test_41k/2mm/vonmises_parcellations/17';
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/DQTAWH/REST_test_41k/0mm';    
-elseif strcmp(SubjectID, 'SSYQZJ')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/SSYQZJ/REST_41k_test/2mm/vonmises_parcellations/14';
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/SSYQZJ/REST_41k_test/0mm';
-elseif strcmp(SubjectID, 'PHPKQJ')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/PHPKQJ/REST/2mm/vonmises_parcellations/18';
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/PHPKQJ/REST/0mm';    
-elseif strcmp(SubjectID, 'YKBYHS')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/YKBYHS/REST_41k_best/2mm/vonmises_parcellations/20';
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/YKBYHS/REST_41k_best/0mm';    
-elseif strcmp(SubjectID, 'XVFXFI')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/XVFXFI/REST/2mm/vonmises_parcellations/14';    
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/XVFXFI/REST/0mm';       
-elseif strcmp(SubjectID, 'CEWLLT')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/CEWLLT/REST/2mm/vonmises_parcellations/14';   
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/CEWLLT/REST/0mm';    
-elseif strcmp(SubjectID, 'TTHMMI')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/TTHMMI/REST/2mm/vonmises_parcellations/13';  
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/TTHMMI/REST/0mm';    
-elseif strcmp(SubjectID, 'XBSGST')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/XBSGST/REST_41k/2mm/vonmises_parcellations/17';   
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/XBSGST/REST_41k/0mm';       
-elseif strcmp(SubjectID, 'ZWLWDL')
-    vonmises_path = '/projects/b1134/analysis/surfFC/BNI/ZWLWDL/REST/2mm/vonmises_parcellations/17';   
-    RSFC_path = '/projects/b1134/analysis/surfFC/BNI/ZWLWDL/REST/0mm';     
-end
+% omitted due to subject identifiers
 
 %load ranked network memberships for each electrode
-if strcmp(SubjectID,'SSYQZJ')
-    Response_Networks = readtable(sprintf('%s/Bipolar_gauss_10mm_FWHM_Elec_Network_Membership_Surgery2.csv',...
-    vonmises_path));
-else
-    Response_Networks = readtable(sprintf('%s/Bipolar_gauss_10mm_FWHM_Elec_Network_Membership.csv',...
-    vonmises_path));
-end
+% omitted due to subject identifiers
 
 %load BOLD RSFC for each electrode
 load(sprintf('%s/corr_mat_elecROI.mat',RSFC_path), 'corr_mat','bipolar_Lnames')
